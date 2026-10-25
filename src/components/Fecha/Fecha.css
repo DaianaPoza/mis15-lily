@@ -1,0 +1,52 @@
+.fecha {
+ 
+  background-image: url('../../assets/images/fondo-fecha-mobile.png');
+  background-size: cover;
+  background-position: center bottom;
+  padding-bottom: clamp(150px, 40vw, 260px); /* espacio para las flores */
+}
+
+.fecha__calendario {
+  margin-top: 32px;
+}
+
+.fecha__fila {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin: 14px 0;
+}
+
+.fecha__lateral {
+  min-width: 95px;
+  padding: 10px 0;
+  border-top: 1px solid var(--rosa-medio);
+  border-bottom: 1px solid var(--rosa-medio);
+  font-family: var(--fuente-texto);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--texto);
+}
+
+.fecha__dia {
+  font-family: var(--fuente-titulo);
+  font-size: 5.5rem;
+  font-weight: 600;
+  line-height: 1;
+  font-variant-numeric: lining-nums;
+  padding: 0 4px;
+}
+
+.fecha__boton {
+  margin-top: 36px;
+}
+
+
+
+@media (min-width: 768px) {
+  .fecha {
+    background-image: url('../../assets/images/fondo-fecha-desktop.webp');
+  }
+}

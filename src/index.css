@@ -1,0 +1,276 @@
+/* =========================
+   VARIABLES
+========================= */
+:root {
+  --rosa-viejo: #b0707a;
+  --rosa-medio: #d4a2a6;
+  --rosa-claro: #fbe9e7;
+  --blanco-suave: rgba(255, 255, 255, 0.35);
+  --texto: #8c5a60;
+
+  --fuente-titulo: 'Cormorant Garamond', serif;
+  --fuente-texto: 'Montserrat', sans-serif;
+
+  --transicion: 0.3s ease;
+  
+}
+
+/* =========================
+   RESET Y BASE
+========================= */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: var(--fuente-texto);
+  background-color: var(--rosa-claro);
+  color: var(--texto);
+  text-align: center;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+
+/* =========================
+   TIPOGRAFÍA REUTILIZABLE
+========================= */
+.titulo {
+  font-family: var(--fuente-titulo);
+  font-weight: 500;
+  color: var(--rosa-viejo);
+  line-height: 1.1;
+}
+
+.subtitulo {
+  font-family: var(--fuente-titulo);
+  font-size: 1.4rem;
+  letter-spacing: 0.25em;
+  color: var(--texto);
+}
+
+.texto-espaciado {
+  font-family: var(--fuente-texto);
+  font-weight: 300;
+  font-size: 0.95rem;
+  letter-spacing: 0.3em;
+  color: var(--texto);
+}
+
+.frase {
+  font-family: var(--fuente-titulo);
+  font-style: italic;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  color: var(--texto);
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+/* =========================
+   TEXTOS PRINCIPALES (portada y hero)
+========================= */
+.texto-mis15 {
+  font-family: var(--fuente-titulo);
+  font-size: 2.2rem;
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+
+.texto-nombre {
+  font-family: var(--fuente-titulo);
+  font-size: clamp(4.5rem, 20vw, 6rem);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  line-height: 1.1;
+}
+
+
+/* =========================
+   SECCIONES
+========================= */
+.seccion {
+  padding: 80px 24px;
+}
+
+.seccion__titulo {
+  font-family: var(--fuente-titulo);
+  font-size: 2.6rem;
+  font-style: italic;
+  font-weight: 500;
+}
+
+.tarjeta {
+  background-color: rgba(255, 255, 255, 0.45);
+  border: 1px solid var(--rosa-medio);
+  border-radius: 16px;
+}
+
+.icono-circulo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  margin: 28px auto 0;
+  border: 1px solid var(--rosa-medio);
+  border-radius: 50%;
+  color: var(--rosa-viejo);
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+
+
+
+
+
+
+/* Variantes de fondo para alternar secciones */
+.seccion--clara {
+  background-color: #fdf6f5;
+}
+
+.seccion--clara .tarjeta {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.seccion--flores {
+  position: relative;
+  isolation: isolate;
+  background-color: var(--rosa-claro);
+  background-repeat: no-repeat;
+}
+
+/* Velo blanco que aclara las flores sin afectar el texto */
+.seccion--flores::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(255, 255, 255, 0.3);
+  z-index: -1;
+  pointer-events: none;
+}
+
+
+
+
+
+/* =========================
+   EFECTO ROSE GOLD
+========================= */
+.texto-rosegold {
+  background: linear-gradient(
+    110deg,
+    #9c5a64 0%,
+    #c4848a 30%,
+    #f1cfc6 48%,
+    #c4848a 62%,
+    #9c5a64 100%
+  );
+  background-size: 250% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 2px 6px rgba(156, 90, 100, 0.25));
+  animation: brillo 6s linear infinite;
+}
+
+@keyframes brillo {
+  from { background-position: 0% center; }
+  to   { background-position: 250% center; }
+}
+
+
+
+/* =========================
+   DIVISOR  —— ✦ ——
+========================= */
+.divisor {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 10px 0;
+  color: var(--rosa-medio);
+}
+
+.divisor__linea {
+  width: 60px;
+  height: 1px;
+  background-color: var(--rosa-medio);
+}
+
+.divisor__rombo { font-size: 0.7rem; }
+
+/* =========================
+   BOTÓN REUTILIZABLE
+========================= */
+.boton {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 34px;
+  font-family: var(--fuente-titulo);
+  font-size: 1.15rem;
+  letter-spacing: 0.08em;
+  color: var(--rosa-viejo);
+  background-color: var(--blanco-suave);
+  border: 1px solid var(--rosa-viejo);
+  border-radius: 999px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all var(--transicion);
+}
+
+.boton:hover {
+  background-color: var(--rosa-viejo);
+  color: #fff;
+}
+
+.boton__flecha { transition: transform var(--transicion); }
+.boton:hover .boton__flecha { transform: translateX(4px); }
+
+/* =========================
+   ANIMACIONES
+========================= */
+.animar-aparecer { animation: aparecer 1.4s ease both; }
+
+.retraso-1 { animation-delay: 0.4s; }
+.retraso-2 { animation-delay: 0.8s; }
+.retraso-3 { animation-delay: 1.2s; }
+
+
+
+/* =========================
+   APARICIÓN AL HACER SCROLL
+========================= */
+.aparecer {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.aparecer--visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aparecer {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+
+
+@keyframes aparecer {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

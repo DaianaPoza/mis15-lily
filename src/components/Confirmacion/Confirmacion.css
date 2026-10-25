@@ -1,0 +1,31 @@
+.confirmacion {
+  background-image: url('../../assets/images/06-confirmacion.webp');
+  background-size: cover;
+  background-position: center;
+  padding-top: clamp(140px, 38vw, 200px);    /* espacio para el ramo de arriba */
+  padding-bottom: clamp(140px, 38vw, 200px); /* espacio para el ramo de abajo */
+}
+
+/* Compu: la imagen centrada a toda la altura, como una tarjeta */
+@media (min-width: 768px) {
+  .confirmacion {
+    background-size: auto 100%;
+    background-color: #fde5e4; /* mismo tono que el fondo de la imagen */
+    padding-top: 190px;
+    padding-bottom: 190px;
+  }
+}
+
+.confirmacion__frase {
+  margin-top: 24px;
+}
+
+.confirmacion__boton {
+  margin-top: 32px;
+}
+
+.confirmacion__pendiente {
+  margin-top: 32px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}

@@ -1,0 +1,84 @@
+.portada {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--rosa-claro);
+  background-image: url('../../assets/images/fondo-portada-mobile.webp');
+  background-size: cover;
+  background-position: center;
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+@media (min-width: 768px) {
+  .portada {
+    background-image: url('../../assets/images/fondo-portada-desktop.webp');
+  }
+}
+
+.portada--saliendo {
+  opacity: 0;
+  transform: scale(1.04);
+  pointer-events: none;
+}
+
+.portada__contenido { padding: 0 24px; }
+
+/* Monograma */
+.portada__monograma {
+  position: relative;
+  width: clamp(180px, 50vw, 240px);
+  margin: 0 auto;
+}
+
+.portada__letra {
+  display: block;
+  font-size: clamp(180px, 50vw, 250px);
+  line-height: 1;
+}
+
+.portada__ramito {
+  position: absolute;
+  left: -4%;    /* más a la derecha: las flores se apoyan sobre la L */
+  top: -6%;       /* más abajo */
+  height: 118%;  /* un poco más grande */
+  z-index: 2;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+/* Textos */
+.portada__subtitulo {
+  margin-top: 44px;          /* separa "Mis 15" del ramito y la L */
+  font-size: 2.2rem;
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: none;
+}
+
+.portada__nombre {
+  margin-top: 8px;
+  font-size: clamp(4.5rem, 20vw, 6rem);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  line-height: 1.1;
+}
+
+.portada__subtitulo { margin-top: 44px; }
+.portada__nombre { margin-top: 8px; }
+
+
+
+.portada__frase {
+  margin-top: 28px;
+  max-width: 260px; /* más angosta: se aleja de las flores de la izquierda */
+  text-shadow:
+    0 0 2px rgba(255, 255, 255, 0.9),
+    0 0 10px rgba(255, 255, 255, 0.9),
+    0 0 18px rgba(255, 255, 255, 0.7);
+}
+
+.portada__boton { margin-top: 36px; }

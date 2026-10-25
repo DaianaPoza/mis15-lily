@@ -1,0 +1,59 @@
+.regalos__frase {
+  margin-top: 24px;
+}
+
+/* Botón "Alias" */
+.regalos__toggle {
+  margin-top: 32px;
+}
+
+.regalos__chevron {
+  display: inline-block;
+  transition: transform var(--transicion);
+}
+
+.regalos__toggle--abierto .regalos__chevron {
+  transform: rotate(180deg);
+}
+
+/* Desplegable: anima la altura de 0 a la altura del contenido */
+.regalos__desplegable {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition: grid-template-rows 0.4s ease, opacity 0.4s ease;
+}
+
+.regalos__desplegable--abierto {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+
+.regalos__desplegable-interior {
+  overflow: hidden;
+}
+
+/* Tarjeta con el alias */
+.regalos__datos {
+  max-width: 320px;
+  margin: 20px auto 4px;
+  padding: 24px 20px;
+  box-shadow: 0 4px 14px rgba(156, 90, 100, 0.08);
+}
+
+.regalos__alias {
+  font-family: var(--fuente-titulo);
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: var(--rosa-viejo);
+  user-select: all;
+}
+
+.regalos__boton {
+  margin-top: 16px;
+}
+
+.regalos__boton--copiado {
+  background-color: var(--rosa-viejo);
+  color: #fff;
+}

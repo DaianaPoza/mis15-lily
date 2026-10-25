@@ -1,0 +1,63 @@
+.footer {
+  position: relative;
+  overflow: hidden;
+ 
+  padding-bottom: 110px;
+  background: linear-gradient(to bottom, #fdf6f5 0%, var(--rosa-claro) 100%);
+}
+
+.footer__contenido {
+  position: relative;
+  z-index: 1;
+}
+
+.footer__frase {
+  max-width: 280px;
+}
+
+.footer__espero {
+  margin-top: 36px; /* separa la frase de "Te espero" */
+}
+
+.footer__nombre {
+  margin-top: 25px;
+}
+
+/* ---- Pétalos flotando ---- */
+.footer__petalos {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.footer__petalo {
+  position: absolute;
+  bottom: -20px;
+  left: var(--x);
+  width: var(--tamano);
+  height: calc(var(--tamano) * 1.3);
+  background: radial-gradient(circle at 30% 30%, #fbe0e0, var(--rosa-medio));
+  border-radius: 70% 0 70% 0; /* forma de pétalo */
+  opacity: 0;
+  animation: flotar var(--duracion) ease-in-out var(--retraso) infinite;
+}
+
+@keyframes flotar {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.7;
+  }
+  50% {
+    transform: translate(20px, -160px) rotate(120deg);
+  }
+  85% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translate(-10px, -320px) rotate(220deg);
+    opacity: 0;
+  }
+}

@@ -1,0 +1,56 @@
+.cuenta {
+  background-color: #fdf6f5;
+}
+
+.cuenta .tarjeta {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+
+
+
+
+.cuenta__grilla {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  max-width: 380px;
+  margin: 32px auto 0;
+}
+
+.cuenta__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px 4px 12px;
+  box-shadow: 0 4px 14px rgba(156, 90, 100, 0.08);
+}
+
+.cuenta__numero {
+  font-family: var(--fuente-titulo);
+  font-size: 2.4rem;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--rosa-viejo);
+  font-variant-numeric: lining-nums tabular-nums; /* números parejos, no "bailan" */
+  animation: cambioNumero 0.4s ease;
+}
+
+.cuenta__etiqueta {
+  margin-top: 8px;
+  font-family: var(--fuente-texto);
+  font-size: 0.65rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--texto);
+}
+
+.cuenta__frase {
+  margin-top: 28px;
+}
+
+@keyframes cambioNumero {
+  from { opacity: 0.3; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

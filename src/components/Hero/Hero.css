@@ -1,0 +1,81 @@
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: var(--rosa-claro);
+}
+
+/* Fondo con zoom lento */
+.hero__fondo {
+  position: absolute;
+  inset: 0;
+  background-image: url('../../assets/images/fondo-hero.webp');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.9;
+  animation: zoomSuave 20s ease-in-out infinite alternate;
+}
+
+/* Halo de luz en el centro para que resalte el texto */
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 255, 255, 0.55) 0%,
+    rgba(255, 255, 255, 0.2) 40%,
+    rgba(255, 255, 255, 0) 70%
+  );
+  pointer-events: none;
+}
+
+.hero__contenido {
+  position: relative;
+  z-index: 1;
+  padding: 0 24px;
+}
+
+.hero__nombre {
+  margin-top: 24px;
+  font-size: clamp(5rem, 24vw, 7.5rem); /* un poco más grande que en la portada */
+}
+
+/* Indicador de scroll */
+.hero__scroll {
+  margin-top: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.hero__scroll-texto { font-size: 0.7rem; }
+
+.hero__flecha {
+  font-size: 1.6rem;
+  color: var(--rosa-viejo);
+  animation: rebote 2s ease-in-out infinite;
+}
+
+@keyframes zoomSuave {
+  from { transform: scale(1); }
+  to   { transform: scale(1.08); }
+}
+
+@keyframes rebote {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(6px); }
+}
+
+/* En pantallas anchas: la imagen vertical se muestra completa
+   y los costados se completan con el rosa de fondo */
+@media (min-width: 768px) {
+  .hero__fondo {
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+  }
+}

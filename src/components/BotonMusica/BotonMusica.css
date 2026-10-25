@@ -1,0 +1,37 @@
+.boton-musica {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border: 1px solid var(--rosa-viejo);
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.85);
+  color: var(--rosa-viejo);
+  box-shadow: 0 4px 14px rgba(156, 90, 100, 0.2);
+  cursor: pointer;
+  transition: transform var(--transicion), background-color var(--transicion);
+}
+
+.boton-musica:hover {
+  transform: scale(1.06);
+}
+
+/* Onda suave alrededor del botón mientras suena */
+.boton-musica--sonando::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: 50%;
+  border: 1px solid var(--rosa-viejo);
+  animation: onda 2s ease-out infinite;
+}
+
+@keyframes onda {
+  from { transform: scale(1); opacity: 0.6; }
+  to   { transform: scale(1.6); opacity: 0; }
+}

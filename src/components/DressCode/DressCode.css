@@ -1,0 +1,21 @@
+.dress {
+  background-image: url('../../assets/images/05-dress-code.webp');
+  background-size: cover;
+  background-position: 30% center; /* celular: solo asoman las ramitas */
+}
+
+@media (min-width: 768px) {
+  .dress {
+    background-position: left center; /* compu: se ve la columna de flores completa */
+  }
+}
+
+.dress__tipo {
+  margin-top: 40px;
+  font-size: 2.8rem;
+  font-weight: 600;
+}
+
+.dress__frase {
+  margin-top: 16px;
+}
